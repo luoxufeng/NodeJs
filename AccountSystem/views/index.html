@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>家庭财务系统欢迎你</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.min.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+  </head>
+  <body>  
+  <% include header%>
+<article class="container">
+<section id="apple" class="row">
+<div class="span12 panel relative" style="display:block">
+<img src="images/ribbon-apple.png" class="ribbon-apple">
+<div class="row">
+<div class="span12">
+    <form class="bs-docs-example form-horizontal" style="margin:80px;" role="form" method="post">
+            <div class="control-group">
+              <label for="inputType" class="control-label">请选择类型：</label>
+              <div class="controls">
+               <select id="inputType" name="inputType" >
+                 <option value="1">支出</option>
+                 <option value="2">收入</option>
+               </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="inputName" class="control-label">类型名称：</label>
+              <div class="controls">
+                <input type="text" placeholder="类型名称" id="inputName" name="inputName">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <button class="btn" type="submit" id="btnAdd">添加</button>
+              </div>
+              <label id="lblMessage" style="color:red;"></label>
+            </div>
+            <div class="control-group">   
+              <% if (locals.success) { %> 
+                <div id="alt_sucess" class="alert alert-success"> 
+                  <%- success %> 
+                </div> 
+             <% } %> 
+
+            <% if (locals.error) { %> 
+              <div id="alt_warning" class="alert alert-warning"> 
+                <%= error %> 
+              </div> 
+            <% } %> 
+            </div>
+     </form>
+     </div>
+     </div>
+   </div>  
+</section>
+   <% include footer%>
+    </article>
+    <div class="container marketing">
+      <footer>
+        <p class="pull-right"><a href="#">操作</a></p>
+        <p>&copy; 2016 Web前端研究, Good. &middot; <a href="#">学习资料</a> &middot; <a href="#">ALICE</a></p>
+      </footer>    
+    </div>
+    <script src="/javascripts/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function(){
+         
+          $("#btnAdd").on("click",function(){
+             var name=$("#inputName").val();
+            if(name.length==0){
+             $("#lblMessage").text("请填写类型名称，类型不能为空");
+             $("#inputName").focus();
+             return false;
+          }
+          return true;
+          });
+          
+      });
+    </script>
+  </body>
+</html>

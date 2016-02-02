@@ -12,7 +12,10 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+//运行ejs模板
+app.engine(".html",require("ejs").__express);
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -56,5 +59,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(8200,function(){
+  console.log("start server");
+});
 
 module.exports = app;
