@@ -48,6 +48,22 @@ pool.getConnection(function(err,connection){
 		});
 	}
 
+
+    //得到所有的类型
+	AccountType.GetAllType=function GetAllType(callback){
+       var getAllType_sql="select * from AccountType";
+		connection.query(getAllType_sql,function(err,result){
+			if(err){
+				console.log("invoked[GetAllType] error:"+err.message);
+				return;
+			}
+
+			//connnection.release();
+			console.log("invoked[GetAllType] is success");
+			callback(err,result);
+		});
+	}
+
 	
 });
 

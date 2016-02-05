@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>家庭财务系统欢迎你</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.min.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+  </head>
+  <body>  
+  <% include header%>
+<article class="container">
+<section>
+<table class="table table-striped">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>类型名称</th>
+              <th>花费金额</th>
+              <th>(消费/支出)人员</th>
+              <th>时间</th>
+              <th>操作</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+              <%if(items.length){items.forEach(function(item){%>
+                <tr>
+                  <td><%=item.Id%></td>
+                  <td><%=item.TypeName%></td>
+                  <td><%=item.AccountMoney%></td>
+                  <td><%=item.AccountSource%></td>
+                  <td><%=formatDateTime(item.CostTime)%></td>
+                  <td><a href="#">编辑</a></td>
+                  <td><a href="#">删除</a></td>
+                </tr>
+               <%})}%>
+          </tbody>
+       </table>
+</section>
+   <% include footer%>
+    </article>
+    <div class="container marketing">
+      <footer>
+        <p class="pull-right"><a href="#">操作</a></p>
+        <p>&copy; 2016 Web前端研究, Good. &middot; <a href="#">学习资料</a> &middot; <a href="#">ALICE</a></p>
+      </footer>    
+    </div>
+    <script src="/javascripts/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="/javascripts/bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function(){
+      function formatDateTime(date){
+        var y=date.getFullYea();
+        var m=date.getMonth()+1;
+        m=m<10?('0'+m):m;
+        var d=date.getDate();
+        d=d<10?('0'+d):d;
+        var h=date.getHours();
+        var minute=date.getMinutes();
+        minute=minute<10?('0'+minute):minute;
+        return y+"-"+m+"-"+d+" "+h+":"+minute;
+     }
+    })
+    
+    </script>
+  </body>
+</html>

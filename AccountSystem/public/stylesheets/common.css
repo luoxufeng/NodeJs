@@ -1,6 +1,6 @@
 body{padding-bottom: 40px; color: #5a5a5a;}
 body {
-    background: url("../img/mooning.png") repeat scroll 0 0 #E5E5E5;
+    background: url("../images/mooning.png") repeat scroll 0 0 #E5E5E5;
     overflow-x: hidden;
 }
 img, p {
@@ -57,7 +57,7 @@ header {
     color: #555555;
 }
 .panel {
-    background: url("../img/white_wall_hash.png") repeat scroll 0 0 #FFFFFF;
+    background: url("../images/white_wall_hash.png") repeat scroll 0 0 #FFFFFF;
     border-radius: 6px 6px 6px 6px;
     box-shadow: 0 1px 8px 1.5px rgba(0, 0, 0, 0.35), 0 20px 70px 8px rgba(0, 0, 0, 0.25);
     color: #333333;
@@ -165,7 +165,7 @@ header {
     font: 400 14.5px/1.5 'Optima','Songti SC','Verdana','Microsoft Yahei',simsun,serif;
 }
 #map {
-    background: url("../img/map-bg.jpg") repeat scroll 0 0 / cover transparent;
+    background: url("../images/map-bg.jpg") repeat scroll 0 0 / cover transparent;
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
     box-shadow: 1px 1px 8px 3px rgba(0, 0, 0, 0.24) inset;
